@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Search Student</title>
+        <style>
+            h2{
+            font-size: 30px;
+            text-align: center;
+            color: #000;
+        }
+            .center {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: 2px solid;
+                }
+        </style>
+    </head>
+    <body>
+        <h2>SEARCH STUDENT DETAILS</h2><br><br>
+
+        <form action="/searchstudent" method="POST" id="searchform">
+        <table class="center">
+            <tr><td><b>Student ID</b></td></tr><br>
+            <tr><td><input type="text" placeholder="STUDENT ID" name="studentid" required /></td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr><td><input type="submit" name="submit"/></td></tr>
+        </table>
+        </form>
+        {% if tstate %}
+        <table>
+            {% for data in row %}
+                <tr>
+                    <th>
+                        {{data}}
+                    </th>
+                    <td>
+                        {{row[data]}}
+                    </td>
+                </tr>
+            {%endfor%}
+        </table>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Display Students</title>
+        <style>
+                table{
+                    border: 2px solid #000;
+                }
+        </style>
+    </head>
+    <body>
+        <h2>STUDENT DETAILS</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th scope="col">STUDENT ID</th>
+                    <th scope="col">STUDENT NAME</th>
+                    <th scope="col">GENDER</th>
+                    <th scope="col">DATE OF BIRTH</th>
+                    <th scope="col">CITY</th>
+                    <th scope="col">STATE</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">QUALIFICATION</th>
+                    <th scope="col">STREAM</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in records %}
+                <tr>
+                    {% for i in range(9) %}
+                    <td>
+                        {{ r[i]  }}
+                    </td>
+                    {% endfor %}
+                 </tr>
+                 {% endfor %}
+            </tbody>
+        </table>    
+    </body>
+</html>
